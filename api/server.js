@@ -1,11 +1,11 @@
 const express = require("express");
-const router = require("./router");
+const recipesRouter = require("./recipe-router");
 
 const server = express();
 
 // server.use(helmet());
 server.use(express.json());
-server.use("/api", router);
+server.use("/api/recipes", recipesRouter);
 
 server.use((err, req, res, next) => {
   // eslint-disable-line
